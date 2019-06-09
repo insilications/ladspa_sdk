@@ -4,7 +4,7 @@
 #
 Name     : ladspa_sdk
 Version  : 1.15
-Release  : 1
+Release  : 2
 URL      : http://www.ladspa.org/download/ladspa_sdk_1.15.tgz
 Source0  : http://www.ladspa.org/download/ladspa_sdk_1.15.tgz
 Summary  : No detailed summary available
@@ -68,19 +68,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1560050969
+export SOURCE_DATE_EPOCH=1560051093
 unset LD_AS_NEEDED
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
 export FFLAGS="$CFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 pushd src
-make
+make PLUGINDIR=\\\"/usr/lib64/ladspa\\\" targets
 popd
 
 
 %install
-export SOURCE_DATE_EPOCH=1560050969
+export SOURCE_DATE_EPOCH=1560051093
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ladspa_sdk
 cp doc/COPYING %{buildroot}/usr/share/package-licenses/ladspa_sdk/doc_COPYING

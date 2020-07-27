@@ -1,1 +1,1 @@
-PLUGINDIR=\\\"/usr/lib64/ladspa\\\" targets
+PLUGINDIR=\\\"/usr/lib64/ladspa\\\" targets V=1 VERBOSE=1

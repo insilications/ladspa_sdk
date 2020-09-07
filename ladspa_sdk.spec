@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : ladspa_sdk
 Version  : 1.15
-Release  : 9
+Release  : 10
 URL      : file:///insilications/build/clearlinux/packages/ladspa_sdk/ladspa_sdk-v1.15.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/ladspa_sdk/ladspa_sdk-v1.15.tar.gz
 Summary  : No detailed summary available
@@ -59,7 +59,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1599486021
+export SOURCE_DATE_EPOCH=1599486255
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -101,7 +101,7 @@ popd
 
 
 %install
-export SOURCE_DATE_EPOCH=1599486021
+export SOURCE_DATE_EPOCH=1599486255
 rm -rf %{buildroot}
 pushd src
 %make_install INSTALL_PLUGINS_DIR=%{buildroot}/usr/lib64/ladspa  INSTALL_INCLUDE_DIR=%{buildroot}/usr/include INSTALL_BINARY_DIR=%{buildroot}/usr/bin

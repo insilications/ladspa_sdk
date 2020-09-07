@@ -1,5 +1,5 @@
 PKG_NAME := ladspa_sdk
-URL = http://www.ladspa.org/download/ladspa_sdk_1.15.tgz
+URL = https://github.com/insilications/ladspa_sdk-clr
 ARCHIVES = 
 
 include ../common/Makefile.common

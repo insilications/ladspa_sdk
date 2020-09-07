@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : ladspa_sdk
 Version  : 1.15
-Release  : 10
+Release  : 11
 URL      : file:///insilications/build/clearlinux/packages/ladspa_sdk/ladspa_sdk-v1.15.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/ladspa_sdk/ladspa_sdk-v1.15.tar.gz
 Summary  : No detailed summary available
@@ -50,6 +50,15 @@ Group: Libraries
 lib components for the ladspa_sdk package.
 
 
+%package staticdev
+Summary: staticdev components for the ladspa_sdk package.
+Group: Default
+Requires: ladspa_sdk-dev = %{version}-%{release}
+
+%description staticdev
+staticdev components for the ladspa_sdk package.
+
+
 %prep
 %setup -q -n ladspa_sdk
 cd %{_builddir}/ladspa_sdk
@@ -59,7 +68,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1599486255
+export SOURCE_DATE_EPOCH=1599487278
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -101,7 +110,7 @@ popd
 
 
 %install
-export SOURCE_DATE_EPOCH=1599486255
+export SOURCE_DATE_EPOCH=1599487278
 rm -rf %{buildroot}
 pushd src
 %make_install INSTALL_PLUGINS_DIR=%{buildroot}/usr/lib64/ladspa  INSTALL_INCLUDE_DIR=%{buildroot}/usr/include INSTALL_BINARY_DIR=%{buildroot}/usr/bin
@@ -127,3 +136,11 @@ popd
 /usr/lib64/ladspa/filter.so
 /usr/lib64/ladspa/noise.so
 /usr/lib64/ladspa/sine.so
+
+%files staticdev
+%defattr(-,root,root,-)
+/usr/lib64/ladspa/amp.a
+/usr/lib64/ladspa/delay.a
+/usr/lib64/ladspa/filter.a
+/usr/lib64/ladspa/noise.a
+/usr/lib64/ladspa/sine.a
